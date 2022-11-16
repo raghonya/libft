@@ -11,11 +11,8 @@ int	ft_atoi(const char *s)
 		|| s[i] == '\n' || s[i] == '\v' || s[i] == ' ')
 		i++;
 	if (s[i] == '-' || s[i] == '+')
-	{
-		if (s[i] == '-')
+		if (s[i++] == '-')
 			sign = -1;
-		i++;
-	}
 	while (s[i] > 47 && s[i] < 58)
 		n = (n * 10) + (s[i++] - 48);
 	return (sign * n);

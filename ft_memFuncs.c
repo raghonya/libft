@@ -61,28 +61,18 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-// int	ft_memcmp(const void *s1, const void *s2, size_t n)
-// {
-// 	size_t			i;
-// 	unsigned char	*s11 = (unsigned char *)s1;
-// 	unsigned char	*s22 = (unsigned char *)s2;
-
-// 	i = 0;
-// 	while (i < n && s11[i] == s22[i])
-// 		i++;
-// 	return (s11[i] - s22[i]);
-// }
-
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (n == 0)
-		return (0);
-	while (--n && *(unsigned char *)s1 == *(unsigned char *)s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	size_t			i;
+	unsigned char	*s11;
+	unsigned char	*s22;
+
+	i = 0;
+	s11 = (unsigned char *)s1;
+	s22 = (unsigned char *)s2;
+	while (i < n && s11[i] == s22[i])
+		i++;
+	return (s11[i] - s22[i]);
 }
 
 // 	// printf ("\n\n");
@@ -146,28 +136,28 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // 	memmove (&a2[2], a2, 4);i = 0;printf ("iskakany: ");while (i < 15){printf ("%d ", a2[i]);i++;}printf ("\n");
 // 		printf ("\n");
 // ///////////////////////////////   MEMCMP   ////////////////////////////////////////
-int	main()
-{
-	int a;
-	printf ("1\n");
-a = ft_memcmp ("lavacava", "lavahava", 0); printf ("im gracy: %d\n", a);
-a = memcmp ("lavacava", "lavahava", 0); printf ("iskakany: %d\n", a);
-	printf ("2\n");
+// int	main()
+// {
+// 	int a;
+// 	printf ("1\n");
+// a = ft_memcmp ("lavacava", "lavahava", 0); printf ("im gracy: %d\n", a);
+// a = memcmp ("lavacava", "lavahava", 0); printf ("iskakany: %d\n", a);
+// 	printf ("2\n");
 
-a = ft_memcmp ("abcdefg", "abcdnfg", 5); printf ("im gracy: %d\n", a);
-a = memcmp ("abcdefg", "abcdnfg", 5); printf ("iskakany: %d\n", a);
-	printf ("3\n");
+// a = ft_memcmp ("abcdefg", "abcdnfg", 5); printf ("im gracy: %d\n", a);
+// a = memcmp ("abcdefg", "abcdnfg", 5); printf ("iskakany: %d\n", a);
+// 	printf ("3\n");
 
-a = ft_memcmp ("hayvanner blyat", "hastat", 4); printf ("im gracy: %d\n", a);
-a = memcmp ("hayvanner blyat", "hastat", 4); printf ("iskakany: %d\n", a);
-	printf ("4\n");
+// a = ft_memcmp ("hayvanner blyat", "hastat", 4); printf ("im gracy: %d\n", a);
+// a = memcmp ("hayvanner blyat", "hastat", 4); printf ("iskakany: %d\n", a);
+// 	printf ("4\n");
 
-a = ft_memcmp ("vat chi vat chi", "vat chi vat a", 15); printf ("im gracy: %d\n", a);
-a = memcmp ("vat chi vat chi", "vat chi vat a", 15); printf ("iskakany: %d\n", a);
-	printf ("5\n");
+// a = ft_memcmp ("vat chi vat chi", "vat chi vat a", 15); printf ("im gracy: %d\n", a);
+// a = memcmp ("vat chi vat chi", "vat chi vat a", 15); printf ("iskakany: %d\n", a);
+// 	printf ("5\n");
 
 // a = memcmp ("abcd", "abcd",    1000000); printf ("iskakany: %d\n", a);
 // a = ft_memcmp ("abcd", "abcd", 1000000); printf ("im gracy: %d\n", a);
-	printf ("\n\n");
-}
+// 	printf ("\n\n");
+// }
 // */

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memFuncs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raghonya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 14:32:39 by raghonya          #+#    #+#             */
-/*   Updated: 2023/01/16 17:13:07 by raghonya         ###   ########.fr       */
+/*   Created: 2023/01/16 14:30:32 by raghonya          #+#    #+#             */
+/*   Updated: 2023/01/16 16:16:34 by raghonya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_calloc(size_t size, size_t byte)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	void	*arr;
-
-	i = 0;
-	if (size == SIZE_MAX || byte == SIZE_MAX)
-		return (NULL);
-	arr = malloc(size * byte);
-	if (!arr)
-		return (NULL);
-	while (i < size * byte)
+	c %= 256;
+	while (n--)
 	{
-		((char *)arr)[i] = 0;
-		i++;
+		if (*(char *)s == c)
+			return ((void *)s);
+		s++;
 	}
-	return (arr);
+	return (NULL);
 }

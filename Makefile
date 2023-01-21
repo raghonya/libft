@@ -1,28 +1,31 @@
 NAME = libft.a
 
-CC = gcc
+DEP = libft.h Makefile
 
-CFLAGS = -c -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror
 
-FILES = $(wildcard *.c)
+FILES = $(filter-out $(wildcard ft_lst*.c),$(wildcard *.c))
 
 OBJ = $(FILES:.c=.o)
 
+BONUS = $(wildcard ft_lst*.c)
+
+BONUS_OBJ = $(BONUS:.c=.o)
+
 all: $(NAME)
-	$(CC) -o main main.c $(NAME); ./main.exe
 
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(DEP)
+	@ar rcs $(NAME) $(OBJ)
 
-$(OBJ): $(FILES)
-	$(CC) $(CFLAGS) $(FILES)
+bonus: $(BONUS_OBJ)
+	@ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f libft.a *.exe *.out
+	rm -f libft.a
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean bonus re

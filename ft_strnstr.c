@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raghonya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 16:18:10 by raghonya          #+#    #+#             */
+/*   Updated: 2023/01/16 16:18:17 by raghonya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char	*str, const char *to_find, size_t n)
 {
 	size_t	i;
 	size_t	k;
-	int	j;
+	int		j;
 
 	i = 0;
-	if (!to_find)
-		return ((char *)str);
-	else if (!str)
+	if ((!str ^ !to_find) && !n)
 		return (NULL);
+	if (*to_find == 0)
+		return ((char *)str);
 	while (str[i] && i < n)
 	{
 		j = -1;
@@ -26,3 +38,13 @@ char	*ft_strnstr(const char	*str, const char *to_find, size_t n)
 	}
 	return (NULL);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+// 	char s[100] = "lorem ipsum dolor sit amet";//, st[100] = "";
+// 	printf ("%s\n", strnstr(s, "", 10));
+// 	printf ("%s\n", ft_strnstr(s, "", 10));
+// }

@@ -1,7 +1,18 @@
-#include "libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raghonya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 14:35:32 by raghonya          #+#    #+#             */
+/*   Updated: 2023/01/16 14:36:59 by raghonya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-gui
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
@@ -9,7 +20,7 @@ gui
 	while (lst != NULL)
 	{
 		i++;
-		lst = lst->next; 
+		lst = lst->next;
 	}
 	return (i);
 }

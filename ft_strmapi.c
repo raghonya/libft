@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raghonya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 16:19:28 by raghonya          #+#    #+#             */
+/*   Updated: 2023/01/16 16:19:30 by raghonya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			*res;
+	char			*res;	
 
 	i = 0;
 	if (!s || !f)
@@ -20,16 +32,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = 0;
 	return (res);
 }
-
-// char f(unsigned int i, char c)
-// {
-// 	char k;
-
-// 	k = c + i + 2;
-// 	return k;
-// }
-
-// int main()
-// {
-// 	printf ("%s\n", ft_strmapi("ABCDEFG", f));
-// }

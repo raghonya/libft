@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raghonya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/16 14:34:17 by raghonya          #+#    #+#             */
+/*   Updated: 2023/01/16 14:34:18 by raghonya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	count(long long int nb)
@@ -11,7 +23,7 @@ static int	count(long long int nb)
 		nb *= -1;
 	}
 	while (nb)
-	{	
+	{
 		size++;
 		nb /= 10;
 	}
@@ -20,11 +32,11 @@ static int	count(long long int nb)
 
 char	*ft_itoa(int n)
 {
-	int				i;
-	int				size;
-	char			*s;
-	long long int	nb;
-	
+	int			i;
+	int			size;
+	char		*s;
+	long int	nb;
+
 	i = 0;
 	nb = n;
 	if (nb == 0)

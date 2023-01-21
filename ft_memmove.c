@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memFuncs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raghonya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 14:32:39 by raghonya          #+#    #+#             */
-/*   Updated: 2023/01/16 17:13:07 by raghonya         ###   ########.fr       */
+/*   Created: 2023/01/16 14:30:32 by raghonya          #+#    #+#             */
+/*   Updated: 2023/01/16 16:16:34 by raghonya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_calloc(size_t size, size_t byte)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	void	*arr;
+	unsigned char	*s11;
+	unsigned char	*s22;
 
-	i = 0;
-	if (size == SIZE_MAX || byte == SIZE_MAX)
-		return (NULL);
-	arr = malloc(size * byte);
-	if (!arr)
-		return (NULL);
-	while (i < size * byte)
+	s11 = (unsigned char *)s1;
+	s22 = (unsigned char *)s2;
+	if (s22 < s11)
 	{
-		((char *)arr)[i] = 0;
-		i++;
+		s11 += n;
+		s22 += n;
+		while (n--)
+			*--s11 = *--s22;
 	}
-	return (arr);
+	else
+		while (n--)
+			*s11++ = *s22++;
+	return (s1);
 }

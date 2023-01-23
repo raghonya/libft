@@ -19,8 +19,8 @@ void	*ft_calloc(size_t size, size_t byte)
 	void	*arr;
 
 	i = 0;
-	if (size == SIZE_MAX || byte == SIZE_MAX)
-		return (NULL);
+	//if (size == SIZE_MAX || byte == SIZE_MAX)
+		//return (NULL);
 	arr = malloc(size * byte);
 	if (!arr)
 		return (NULL);

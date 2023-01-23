@@ -104,7 +104,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (!stralloc(s, split, wrdcnt, c))
 	{
-		free (&s);
+		free (&split);
 		return (NULL);
 	}
 	return (fill(s, split, wrdcnt, c));
@@ -114,7 +114,7 @@ char	**ft_split(char const *s, char c)
 
 // int main()
 // {
-// 	char c = ' ', s[1000] = "asdhua shaji rguhe e $%^&* 890HU 7237 E9 79 a";
+// 	char c = ' ', s[1000] = "asdhua shaji rguhe e $^&* 890HU 7237 E9 79 a";
 // 	char **s1 = ft_split(s, c);
 // 	int i = 0, wrdcnt = 0;
 // 	while (s[i])
@@ -126,8 +126,9 @@ char	**ft_split(char const *s, char c)
 // 		while (s[i] != c && s[i] != 0)
 // 			i++;
 // 	}
+// 	printf ("%d\n", wrdcnt);
 // 	i = 0;
-// 	while (i < wrdcnt)
+// 	while (i < wrdcnt + 1)
 // 	{
 // 		printf ("%s ,", s1[i]);
 // 		i++;
